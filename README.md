@@ -9,7 +9,7 @@ This library is a sequelize factory for model layer.
 To install thsi package, you can use NPM by typing following command:
 
 ```
-npm install http://npmjs.xiaojsoft.org/xap/xaplibrary-sequelizefactory-$(PACKAGE_VERSION).tgz --save
+npm install https://npmjs.xiaojsoft.org/xaplibrary/xaplibrary-sequelizefactory/xaplibrary-sequelizefactory-$(PACKAGE_VERSION).tgz --save
 ```
 
 Then you can import this library in your JavaScript code:
