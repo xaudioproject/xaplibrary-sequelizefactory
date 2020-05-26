@@ -1,0 +1,21 @@
+{
+  "name": "xaplibrary-sequelizefactory",
+  "version": "1.0.0",
+  "description": "Sequelize factory of XOrange Audio Project library.",
+  "main": "library/api.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "XAP",
+    "MySQL",
+    "Sequelize"
+  ],
+  "author": "XAP Author",
+  "license": "BSD-3-Clause",
+  "dependencies": {
+    "mysql2": "^2.1.0",
+    "sequelize": "^5.21.10",
+    "xrtlibrary-traverse": "^1.0.11"
+  }
+}

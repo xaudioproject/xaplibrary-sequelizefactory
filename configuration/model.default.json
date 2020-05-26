@@ -1,0 +1,30 @@
+{
+    "host": "localhost",
+    "port": 3306,
+    "username": null,
+    "password": null,
+    "database": null,
+    "dialect": "mysql",
+    "protocol": "tcp",
+    "sync": {
+        "force": false,
+        "alter": false
+    },
+    "logging": false,
+    "omit-null": false,
+    "pool": {
+        "max": 5,
+        "min": 0,
+        "idle": 10000,
+        "acquire": 60000,
+        "evict": 1000
+    },
+    "transaction": {
+        "type": "DEFERRED",
+        "isolation-level": "READ_COMMITTED"
+    },
+    "retry": {
+        "max": 4
+    },
+    "operators-aliases": null
+}
