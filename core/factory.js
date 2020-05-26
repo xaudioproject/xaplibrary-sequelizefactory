@@ -111,5 +111,6 @@ function SequelizeFactory() {
 
 //  Export public APIs.
 module.exports = {
+    "Sequelize": Sequelize,
     "SequelizeFactory": SequelizeFactory
 };

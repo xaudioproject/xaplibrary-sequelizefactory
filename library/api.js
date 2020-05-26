@@ -13,5 +13,6 @@ const CrFactory = require("./../core/factory");
 
 //  Export public APIs.
 module.exports = {
+    "Sequelize": CrFactory.Sequelize,
     "SequelizeFactory": CrFactory.SequelizeFactory
 };
