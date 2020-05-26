@@ -1,6 +1,6 @@
 {
   "name": "xaplibrary-sequelizefactory",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Sequelize factory of XOrange Audio Project library.",
   "main": "library/api.js",
   "scripts": {
