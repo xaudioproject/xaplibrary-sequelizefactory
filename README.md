@@ -30,10 +30,9 @@ let sequelize = await factory.create({
     "password": "xxx",
     "host": "127.0.0.1",
     "port": 3306,
-    "db-name": "xxx",
+    "database": "xxx",
     "dialect": "mysql",
     "logging": false,
-    "charset": "utf8",
     "pool": {
         "max": 5,
         "min": 0,
