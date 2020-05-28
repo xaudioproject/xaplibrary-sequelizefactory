@@ -11,6 +11,7 @@
 //  Import modules.
 const FS = require("fs");
 const Path = require("path");
+const Sequelize = require("sequelize");
 const XRTLibTraverse = require("xrtlibrary-traverse");
 const Util = require("util");
 
@@ -259,6 +260,14 @@ function ModelTransactionConfiguration(
         };
     }
 }
+
+//  Isolation levels.
+ModelTransactionConfiguration.ISOLATION_LEVELS = {
+    "READ_UNCOMMITTED": Sequelize.Transaction.ISOLATION_LEVELS.READ_UNCOMMITTED,
+    "READ_COMMITTED": Sequelize.Transaction.ISOLATION_LEVELS.READ_COMMITTED,
+    "REPEATABLE_READ": Sequelize.Transaction.ISOLATION_LEVELS.REPEATABLE_READ,
+    "SERIALIZABLE": Sequelize.Transaction.ISOLATION_LEVELS.SERIALIZABLE
+};
 
 /**
  *  Model retry configuration.
@@ -718,6 +727,12 @@ ModelTransactionConfiguration.Default = function() {
         isolationLevel = root.sub("isolation-level")
                              .notNull()
                              .string()
+                             .oneOf([
+                                "READ_UNCOMMITTED",
+                                "READ_COMMITTED",
+                                "REPEATABLE_READ",
+                                "SERIALIZABLE"
+                             ])
                              .inner();
     } catch (error) {
         throw new ModelConfigurationError(Util.format(
@@ -760,6 +775,9 @@ ModelTransactionConfiguration.From = function(cfg) {
                              dcfg.getIsolationLevel())
                              .notNull()
                              .string()
+                             .selectFromObject(
+                                 ModelTransactionConfiguration.ISOLATION_LEVELS
+                             )
                              .inner();
     } catch (error) {
         throw new ModelConfigurationError(Util.format(
